@@ -12,168 +12,185 @@ HTML_TEMPLATE = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>আমাদের অর্গানাইজেশন</title>
+    <title>Radha Sudarshan Temple</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    
     <style>
+        /* General Reset */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            background-color: #FDFBF7; /* Soft aesthetic background */
+            color: #4A4A4A;
         }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #8B4513; /* Warm earthy tone */
+        }
+
+        /* Navbar */
         header {
-            background-color: #1a365d;
-            color: white;
-            padding: 1rem 2rem;
+            background-color: #FFF;
+            padding: 20px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
+
         header .logo {
-            font-size: 1.5rem;
+            font-size: 24px;
             font-weight: bold;
+            color: #D35400; /* Saffron touch */
         }
-        nav a {
-            color: white;
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
             text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 600;
+            color: #4A4A4A;
+            font-weight: 400;
             transition: color 0.3s;
         }
-        nav a:hover {
-            color: #38bdf8;
+
+        nav ul li a:hover {
+            color: #D35400;
         }
-        main {
-            flex: 1;
-            padding: 2rem 1rem;
-            max-width: 800px;
-            margin: 0 auto;
-            width: 100%;
-        }
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-        h1, h2 {
-            margin-bottom: 1rem;
-            color: #1a365d;
-        }
-        p {
-            line-height: 1.6;
-            color: #4a5568;
-        }
-        form {
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(253, 251, 247, 0.7), rgba(253, 251, 247, 0.7)), url('https://images.unsplash.com/photo-1599839619722-39751411ea63?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-top: 1rem;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
         }
-        label {
-            font-weight: bold;
-            color: #2d3748;
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            color: #2C3E50;
         }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #cbd5e0;
-            border-radius: 5px;
-            font-size: 14px;
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            color: #555;
+            margin-bottom: 20px;
         }
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: #3182ce;
-        }
-        button {
-            padding: 12px;
-            background-color: #1a365d;
+
+        .btn {
+            padding: 10px 25px;
+            background-color: #D35400;
             color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 400;
             transition: background 0.3s;
         }
-        button:hover {
-            background-color: #2b6cb0;
+
+        .btn:hover {
+            background-color: #A04000;
         }
-        .alert {
-            background-color: #d1e7dd;
-            color: #0f5132;
-            padding: 1rem;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-            border: 1px solid #badbcc;
+
+        /* Section Styling */
+        section {
+            padding: 60px 20px;
+            text-align: center;
         }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
         footer {
-            background-color: #1a365d;
+            background-color: #2C3E50;
             color: white;
             text-align: center;
-            padding: 1rem;
-            margin-top: auto;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <div class="logo">OrgLogo</div>
+        <div class="logo">Radha Sudarshan</div>
         <nav>
-            <a href="{{ url_for('home') }}">হোম</a>
-            <a href="{{ url_for('contact') }}">যোগাযোগ</a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#darshan">Darshan Timings</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main>
-        {% with messages = get_flashed_messages() %}
-          {% if messages %}
-            {% for message in messages %}
-              <div class="alert">{{ message }}</div>
-            {% endfor %}
-          {% endif %}
-        {% endwith %}
+    <section id="home" class="hero">
+        <h1>Radha Sudarshan Temple</h1>
+        <p>Experience peace, devotion, and divine love at our sacred organization.</p>
+        <a href="#about" class="btn">Explore More</a>
+    </section>
 
-        {% if page_name == 'home' %}
-        <div class="card">
-            <h1>আমাদের অর্গানাইজেশনে স্বাগতম</h1>
-            <p>আমরা সমাজে ইতিবাচক পরিবর্তন আনতে এবং সেরা সেবা প্রদান করতে কাজ করছি। এটি আমাদের ওয়েবসাইটের মূল পাতা।</p>
-        </div>
-        
-        {% elif page_name == 'contact' %}
-        <div class="card">
-            <h2>যোগাযোগ করুন</h2>
-            <form method="POST" action="{{ url_for('contact') }}">
-                <div>
-                    <label>আপনার নাম:</label>
-                    <input type="text" name="name" placeholder="আপনার নাম লিখুন" required>
-                </div>
-                <div>
-                    <label>ইমেইল ঠিকানা:</label>
-                    <input type="email" name="email" placeholder="example@email.com" required>
-                </div>
-                <div>
-                    <label>আপনার বার্তা:</label>
-                    <textarea name="message" rows="4" placeholder="আপনার বার্তাটি লিখুন..." required></textarea>
-                </div>
-                <button type="submit">পাঠিয়ে দিন</button>
-            </form>
-        </div>
-        {% endif %}
-    </main>
+    <section id="about">
+        <h2>About Our Organization</h2>
+        <p>The Radha Sudarshan Temple is a spiritual community dedicated to devotion, peace, and cultural heritage. We organize daily kirtans, charity drives, and spiritual discourses to uplift the soul and serve humanity. Join our aesthetic and peaceful environment to connect with the divine.</p>
+    </section>
+
+    <section id="darshan" style="background-color: #F4ECE6;">
+        <h2>Darshan & Aarti Timings</h2>
+        <p><strong>Morning Aarti:</strong> 6:00 AM - 7:00 AM</p>
+        <p><strong>Darshan:</strong> 7:00 AM - 12:00 PM</p>
+        <p><strong>Evening Aarti:</strong> 6:30 PM - 7:30 PM</p>
+        <p><strong>Bhajan Sandhya:</strong> Every Sunday at 5:00 PM</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Visit us to experience the divine presence.</p>
+        <p><br>📍 Location: [Your Temple Address Here]</p>
+        <p>📞 Phone: +91 XXXXX XXXXX</p>
+        <p>✉️ Email: info@radhasudarshan.org</p>
+    </section>
 
     <footer>
-        <p>&copy; 2026 আমাদের অর্গানাইজেশন। সর্বস্বত্ব সংরক্ষিত।</p>
+        <p>&copy; 2026 Radha Sudarshan Temple Organization. All Rights Reserved.</p>
+        <p>May Lord Krishna and Radha Rani bless you.</p>
     </footer>
+
 </body>
 </html>
+
 """
 
 # হোম পেজ
