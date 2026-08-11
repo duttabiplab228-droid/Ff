@@ -73,7 +73,7 @@ HTML_TEMPLATE = """
         /* Hero Section */
         .hero {
             height: 80vh;
-            background: linear-gradient(rgba(253, 251, 247, 0.7), rgba(253, 251, 247, 0.7)), url('https://images.unsplash.com/photo-1599839619722-39751411ea63?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            background: linear-gradient(rgba(253, 251, 247, 0.7), rgba(253, 251, 247, 0.7)), url('https://plain-apac-prod-public.komododecks.com/202608/11/TEtnv6zTYjt49OMx35By/image.jpg') center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
